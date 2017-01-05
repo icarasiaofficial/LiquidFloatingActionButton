@@ -18,7 +18,7 @@ import QuartzCore
 @objc public protocol LiquidFloatingActionButtonDelegate {
     // selected method
     @objc optional func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int)
-    @objc optional func didTapped(liquidFloatingActionButton: LiquidFloatingActionButton)
+    @objc optional func didTapped(_ liquidFloatingActionButton: LiquidFloatingActionButton)
 
 }
 
