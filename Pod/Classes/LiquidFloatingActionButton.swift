@@ -55,7 +55,7 @@ open class LiquidFloatingActionButton : UIView {
         }
     }
     open fileprivate(set) var isClosed: Bool = true
-    
+    @IBInspectable open var subButtonsColor: UIColor?
     @IBInspectable open var color: UIColor = UIColor(red: 82 / 255.0, green: 112 / 255.0, blue: 235 / 255.0, alpha: 1.0) {
         didSet {
             baseView.color = color
@@ -92,7 +92,12 @@ open class LiquidFloatingActionButton : UIView {
     }
 
     fileprivate func insertCell(_ cell: LiquidFloatingCell) {
-        cell.color  = self.color
+        if let customeColor = subButtonsColor{
+          cell.color  = customeColor
+        }
+        else{
+          cell.color  = self.color
+        }
         cell.radius = self.frame.width * cellRadiusRatio
         cell.center = self.center.minus(self.frame.origin)
         cell.actionButton = self
