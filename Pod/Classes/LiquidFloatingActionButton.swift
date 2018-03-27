@@ -485,7 +485,7 @@ open class LiquidFloatingCell : LiquittableCircle {
     public init(icon: UIImage, tintColor: UIColor) {
         self.originalColor = UIColor.clear
         super.init()
-        setup(icon)
+        setup(icon, tintColor: tintColor)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -515,7 +515,7 @@ open class LiquidFloatingCell : LiquittableCircle {
             subview.alpha = open ? ratio : -ratio
         }
     }
-    
+  
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if responsible {
             originalColor = color
